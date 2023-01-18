@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app style="background-color: #faf8f4">
+    <AppBar />
+    <v-main class="layout">
+      <v-divider style="margin-top: 4rem"></v-divider>
+      <HomeView />
+      <v-divider style="margin-top: 4rem; margin-bottom: 3rem"></v-divider>
+      <CategoriesView />
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import AppBar from "./components/AppBar.vue";
+import HomeView from "./views/HomeView.vue";
+import CategoriesView from "./components/CategoriesSection.vue";
+export default {
+  name: "App",
+  components: {
+    AppBar,
+    HomeView,
+    CategoriesView,
+  },
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  data: () => ({
+    //
+  }),
+};
+</script>
+<style scoped>
+.layout {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 </style>
