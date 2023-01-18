@@ -1,19 +1,26 @@
 <template>
-  <div>
-    <v-layout row wrap>
-      <h2>Browse by Job Categories</h2>
-      <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
-      <v-btn color="black" class="white--text">Browse All</v-btn>
-    </v-layout>
-    <v-layout row wrap>
-      <v-flex v-for="item in items" :key="item.id" xs12 md3>
-        <v-card class="pt-2 mb-5 mt-5 ml-2">
-          <v-img :src="item.image" width="70" height="70" class="ml-3"></v-img>
-          <v-card-title>{{ item.title }}</v-card-title>
-          <v-card-text>{{ item.description }}</v-card-text>
-        </v-card>
-      </v-flex>
-    </v-layout>
+  <div class="bg">
+    <div class="adjust">
+      <v-layout row wrap>
+        <h2>Browse by Job Categories</h2>
+        <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
+        <v-btn color="black" class="white--text">Browse All</v-btn>
+      </v-layout>
+      <v-layout row wrap>
+        <v-flex v-for="item in items" :key="item.id" xs12 md3>
+          <v-card class="pt-2 mt-5 ml-5">
+            <v-img
+              :src="item.image"
+              width="70"
+              height="70"
+              class="ml-3"
+            ></v-img>
+            <v-card-title>{{ item.title }}</v-card-title>
+            <v-card-text>{{ item.description }}</v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </div>
   </div>
 </template>
 <script>
@@ -65,3 +72,15 @@ export default {
   }),
 };
 </script>
+<style scoped>
+.adjust {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.bg {
+  background-color: white;
+}
+</style>

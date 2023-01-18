@@ -1,16 +1,8 @@
 <template>
-  <div style="position: relative">
-    <v-img
-      src="../assets/yellowspot.png"
-      style="position: absolute; z-index: 1"
-    />
+  <div class="layout">
+    <v-img src="../assets/yellowspot.png" class="yellowspot" />
     <v-row>
-      <v-flex
-        xs12
-        md6
-        class="text-center"
-        style="position: relative; z-index: 2"
-      >
+      <v-flex xs12 md6 class="text-center flexpos">
         <p>
           <span style="font-size: 35px; font-weight: bolder"
             >Find Your Dream</span
@@ -28,12 +20,7 @@
         </p>
       </v-flex>
 
-      <v-flex
-        xs12
-        md6
-        class="text-center"
-        style="position: relative; z-index: 2"
-      >
+      <v-flex xs12 md6 class="text-center flexpos">
         <img src="../assets/main.png" alt="An image" class="responsive-img" />
       </v-flex>
       <v-img
@@ -76,3 +63,18 @@ export default {
   data: () => ({}),
 };
 </script>
+<style scoped>
+.yellowspot {
+  position: absolute;
+  z-index: 1;
+}
+.flexpos {
+  position: relative;
+  z-index: 2;
+}
+.layout {
+  position: relative;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+</style>
